@@ -1,6 +1,6 @@
 package controllers
 
-import domain.{GifImage, ClaraGIPHYFacade}
+import api.{ClaraGiphyFacade, GifImage, ClaraGiphyFacade$}
 import play.api.mvc._
 import play.api.libs.json._
 
@@ -11,7 +11,7 @@ object Application extends Controller with GifImageJsonWrite {
   }
 
   def search(keyword: String) = Action { implicit request =>
-     val api = ClaraGIPHYFacade
+     val api = ClaraGiphyFacade
      Ok(Json.toJson(api.images(keyword)))
   }
 }

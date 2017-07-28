@@ -1,6 +1,6 @@
 package controllers
 
-import domain.GifImage
+import api.GifImage
 import play.api.libs.json.{Json, Writes}
 
 trait GifImageJsonWrite {
