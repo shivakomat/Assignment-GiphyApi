@@ -7,4 +7,6 @@ trait GiphyConfig {
 
   val SEARCH_URL: String = ROOT_URL.concat("search?q=")
 
+  val WITH_LIMIT: String = "&limit="
+
 }

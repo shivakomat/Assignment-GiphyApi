@@ -5,9 +5,10 @@ import skinny.http.Response
 
 object GiphyClientFacade extends GiphyClientApi with GiphyConfig {
 
-  override def search(keyword: String): Response = {
+  override def search(keyword: String, limit: Int = 20): Response = {
     val searchParams = keyword.replace(' ', '+')
-    HTTPClient.GET(SEARCH_URL + searchParams + API_KEY)
+    val requestURL = SEARCH_URL + searchParams + WITH_LIMIT + limit.toString + API_KEY
+    HTTPClient.GET(requestURL)
   }
 
 }
